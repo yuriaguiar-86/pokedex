@@ -1,0 +1,40 @@
+
+header .mobile {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .order__list {
+  display: none;
+  font-size: 2.5em;
+}
+
+img {
+  width: 200px;
+}
+
+h1 {
+  font-size: 3.5em;
+  padding-left: 20px;
+}
+
+@media screen and (min-width: 450px) {
+  header {
+    margin: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header .order__list {
+    display: block;
+    display: flex;
+    align-items: center;
+  }
+
+  .order__list {
+    font-size: 2em;
+  }
+}

@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --grey: #F7F7F7;
+  --black: #000000;
+  --white: #ffffff;
+  --dark-grey: #c7c7c7;
+
+  --dark: #273B40;
+  --yellow: #FFCB04;
+  --azul-green: #386C7D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  color: var(--white);
+  background: linear-gradient(60deg, var(--dark), var(--azul-green));
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

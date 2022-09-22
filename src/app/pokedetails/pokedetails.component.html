@@ -1,0 +1,76 @@
+<main>
+  <section class="container__top">
+    <div class="back__and__list">
+      <button (click)="listPokemons()"><p class="seta__voltar">&larr;</p></button>
+      <h1>{{ pokemon.name }}</h1>
+    </div>
+
+    <div class="order__list">
+      <p># {{ pokemon.id }}</p>
+    </div>
+    <img [src]="pokeball" alt="Pokeball" class="pokeball__background" />
+  </section>
+
+  <section class="container__about">
+    <img [src]="pokemon.sprites.other.dream_world.front_default" alt="{{ pokemon.name }}" class="pokemon__image" />
+
+    <div class="list__tipos">
+      <p>
+        <label class="tipo__pokemon" *ngFor="let types of pokemon.types">
+          {{ types.type.name }}
+        </label>
+      </p>
+    </div>
+
+    <div class="about__main">
+      <h2>Sobre</h2>
+
+      <div class="sobre__pokemon">
+        <div class="card">
+          <div>
+            <h3>{{ pokemon.weight }} Kg</h3>
+          </div>
+          <p>Peso</p>
+        </div>
+
+        <div class="card card__central">
+          <div>
+            <h3>{{ pokemon.height }} Mt</h3>
+          </div>
+          <p>Altura</p>
+        </div>
+
+        <div class="card">
+          <div>
+            <h3>{{ pokemon.moves.length }}</h3>
+          </div>
+          <p>Movimentos</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="status__batle">
+      <h2>Status de batalha</h2>
+
+      <div class="status__main">
+        <nav>
+          <ul>
+            <li>HP</li>
+            <li>ATK</li>
+            <li>DEF</li>
+            <li>SP ATK</li>
+            <li>SP DEF</li>
+            <li>SPEED</li>
+          </ul>
+        </nav>
+
+        <div class="status__quantitativo">
+          <div class="valor__progress" *ngFor="let stats of pokemon.stats">
+            <p>{{ (stats.base_stat < 100) ? "0" + stats.base_stat : stats.base_stat }}</p>
+            <progress value="{{ stats.base_stat }}" max="150"></progress>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

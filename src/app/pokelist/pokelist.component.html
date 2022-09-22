@@ -1,0 +1,25 @@
+<app-pokeheader></app-pokeheader>
+
+<main>
+  <div class="search__pokemon">
+    <input type="text" placeholder="Procurar pokemon" />
+    <img [src]="search" alt="Logo search" />
+  </div>
+
+  <div class="pokemon__get">
+    <!-- Container -->
+    <div class="about__pokemon" *ngFor="let pokemon of pokemons">
+      <p>#{{ pokemon.status.id }}</p>
+      <section>
+        <img [src]="pokemon.status.sprites.other.dream_world.front_default" alt="{{ pokemon.name }}">
+      </section>
+      <a routerLink="/pokemons/{{ pokemon.status.id }}">{{ pokemon.name }}</a>
+    </div>
+    <!-- End container -->
+
+    <div class="message_error" *ngIf="error">
+      <img [src]="snorlax" alt="Pokemon snorlax" class="pokemon__snorlax" />
+      <h2>Nenhum pokemon encontrado...</h2>
+    </div>
+  </div>
+</main>
