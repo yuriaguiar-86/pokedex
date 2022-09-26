@@ -2,7 +2,7 @@
 
 <main>
   <div class="search__pokemon">
-    <input type="text" placeholder="Procurar pokemon" />
+    <input type="text" placeholder="Procurar pokemon" #input (keyup)="searchPokemon(input.value)" />
     <img [src]="search" alt="Logo search" />
   </div>
 
