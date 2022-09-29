@@ -91,7 +91,6 @@ a:active, a:visited, a:link {
 
 .pagination {
   text-align: center;
-  /* color: var(--white); */
 }
 
 @media screen and (max-width: 450px) {
