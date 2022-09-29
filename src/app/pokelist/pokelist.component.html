@@ -8,7 +8,7 @@
 
   <div class="pokemon__get">
     <!-- Container -->
-    <div class="about__pokemon" *ngFor="let pokemon of pokemons">
+    <div class="about__pokemon" *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: items, currentPage: page, totalItems: allPokemons }">
       <p>#{{ pokemon.status.id }}</p>
       <section>
         <img [src]="pokemon.status.sprites.other.dream_world.front_default" alt="{{ pokemon.name }}">
@@ -22,4 +22,9 @@
       <h2>Nenhum pokemon encontrado...</h2>
     </div>
   </div>
+
+  <div class="pagination">
+    <pagination-controls (pageChange)="page = $event; pokemons = []; getAllPokemons()"></pagination-controls>
+  </div>
 </main>
+

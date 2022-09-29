@@ -12,8 +12,8 @@ export class PokemonService {
 
   constructor( private http: HttpClient ) { }
 
-  index(): Observable<any> {
-    return this.http.get<any>(this.url_api).pipe(
+  index(limit: number, offset: string): Observable<any> {
+    return this.http.get<any>(`${this.url_api}?limit=${limit}&offset=${offset}`).pipe(
       tap(res => res),
       tap(res => {
         res.results.map(pokemon => {

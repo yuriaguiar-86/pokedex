@@ -9,6 +9,7 @@ import { PokelistComponent } from './pokelist/pokelist.component';
 import { PokedetailsComponent } from './pokedetails/pokedetails.component';
 import { PokenotComponent } from './pokenot/pokenot.component';
 import { PokefooterComponent } from './pokefooter/pokefooter.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PokefooterComponent } from './pokefooter/pokefooter.component';
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

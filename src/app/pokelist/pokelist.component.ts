@@ -13,6 +13,9 @@ export class PokelistComponent implements OnInit {
   pokeball = '/assets/pokeball.png';
 
   scanner: string;
+  page = 0;
+  items: number = 20;
+  allPokemons: number;
   error: boolean = false;
 
   public pokemons: any;
@@ -21,10 +24,16 @@ export class PokelistComponent implements OnInit {
   constructor( private service: PokemonService ) { }
 
   ngOnInit(): void {
-    this.service.index()
+    this.getAllPokemons();
+  }
+
+  getAllPokemons() {
+    this.service.index(20, this.page.toString() + 0)
       .subscribe(res => {
         this.pokemonsFilters = res.results;
         this.pokemons = this.pokemonsFilters;
+        this.allPokemons = res.count;
+        console.log(res.count);
       },
       errors => {
         this.error = true
