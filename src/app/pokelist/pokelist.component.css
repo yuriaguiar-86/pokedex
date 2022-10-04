@@ -63,6 +63,7 @@
   width: 170px;
   padding: 10px;
   border-radius: 0 0 10px 10px;
+  border-top: 1px solid var(--dark-grey);
 
   font-weight: bold;
   text-align: center;
